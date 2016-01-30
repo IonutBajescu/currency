@@ -16,6 +16,10 @@ class Amount implements \Ionut\Currency\Contracts\Amount
      */
     protected $currency;
 
+    /**
+     * @param  float     $value
+     * @param  Currency  $currency
+     */
     public function __construct($value, Currency $currency)
     {
         $this->value = $value;

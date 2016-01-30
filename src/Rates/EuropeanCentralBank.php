@@ -10,6 +10,9 @@ use Ionut\Currency\Contracts\ExchangeRates;
 class EuropeanCentralBank implements ExchangeRates
 {
 
+    /**
+     * The URI that has the latest conversion rates.
+     */
     const URI = 'https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml';
 
     /**
@@ -17,11 +20,22 @@ class EuropeanCentralBank implements ExchangeRates
      */
     protected $rates;
 
+    /**
+     * @param Downloader $downloader
+     */
     public function __construct(Downloader $downloader)
     {
         $this->rates = $this->getNormalizedRates($downloader);
     }
 
+    /**
+     * Get the conversion rate between two currencies.
+     *
+     * @param  Currency  $fromCurrency
+     * @param  Currency  $toCurrency
+     * @return float
+     * @throws InvalidCurrencyException
+     */
     public function getRate(Currency $fromCurrency, Currency $toCurrency)
     {
         return $this->getRelativeRate($fromCurrency) / $this->getRelativeRate($toCurrency);

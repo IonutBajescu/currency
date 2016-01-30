@@ -30,8 +30,7 @@ class Downloader implements \Ionut\Currency\Contracts\Downloader
     }
 
     /**
-     * Get the content of an URI, in case we don't have it in cache already
-     * we're going to download it.
+     * Get the contents of an URI and cache it for CACHE_LIFETIME seconds.
      *
      * @param  string  $uri
      * @return string

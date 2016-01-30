@@ -7,18 +7,28 @@ use Ionut\Currency\Contracts\Amount;
 use Ionut\Currency\Contracts\Currency;
 use Ionut\Currency\Contracts\ExchangeRates;
 
-class Exchanger
+class Exchanger implements \Ionut\Currency\Contracts\Exchanger
 {
     /**
      * @var ExchangeRates
      */
-    private $rates;
+    protected $rates;
 
+    /**
+     * @param ExchangeRates $rates
+     */
     public function __construct(ExchangeRates $rates)
     {
         $this->rates = $rates;
     }
 
+    /**
+     * Convert an amount to another currency based on the exchange rates of the exchanger.
+     *
+     * @param  Amount    $amount
+     * @param  Currency  $toCurrency
+     * @return Currency
+     */
     public function convert(Amount $amount, Currency $toCurrency)
     {
         $rate = $this->rates->getRate($amount->getCurrency(), $toCurrency);
