@@ -27,6 +27,19 @@ class Amount implements \Ionut\Currency\Contracts\Amount
     }
 
     /**
+     * Format the amount's value with grouped thousands.
+     *
+     * @param  int     $decimals
+     * @param  string  $dec_point
+     * @param  string  $thousands_sep
+     * @return string
+     */
+    public function format($decimals = 0 , $dec_point = '.' , $thousands_sep = ',')
+    {
+        return number_format($this->value, $decimals, $dec_point, $thousands_sep);
+    }
+
+    /**
      * Get the difference between this amount and another float number.
      *
      * @param  float  $otherFloatNumber
