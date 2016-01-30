@@ -3,7 +3,7 @@
 namespace Ionut\Currency\Contracts;
 
 
-interface Exchanges
+interface ExchangeRates
 {
 
     /**

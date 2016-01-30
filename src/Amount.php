@@ -23,6 +23,20 @@ class Amount implements \Ionut\Currency\Contracts\Amount
     }
 
     /**
+     * Get the difference between this amount and another float number.
+     *
+     * @param  float  $otherFloatNumber
+     * @return number
+     */
+    public function difference($otherFloatNumber)
+    {
+        return abs(
+            ($this->value - $otherFloatNumber)
+            / $otherFloatNumber
+        );
+    }
+
+    /**
      * @return Currency
      */
     public function getCurrency()
