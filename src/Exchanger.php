@@ -27,7 +27,7 @@ class Exchanger implements \Ionut\Currency\Contracts\Exchanger
      *
      * @param  Amount    $amount
      * @param  Currency  $toCurrency
-     * @return Currency
+     * @return Amount
      */
     public function convert(Amount $amount, Currency $toCurrency)
     {
