@@ -2,6 +2,8 @@
 
 namespace Ionut\Currency;
 
+use Ionut\Currency\Contracts\Currency;
+
 class Amount implements \Ionut\Currency\Contracts\Amount
 {
     /**

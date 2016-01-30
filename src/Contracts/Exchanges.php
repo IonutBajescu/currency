@@ -14,9 +14,4 @@ interface Exchanges
      * @return float
      */
     public function getRate(Currency $fromCurrency, Currency $toCurrency);
-
-    /**
-     * Download the files that contain the currencies rates, has to be called only once a day.
-     */
-    public function download();
 }
