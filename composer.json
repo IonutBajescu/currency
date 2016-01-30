@@ -1,0 +1,20 @@
+{
+  "name": "ionut/currency",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ionut Bajescu",
+      "email": "office@ionut-bajescu.com",
+      "homepage": "http://ionut-bajescu.com",
+      "role": "PHP Software Engineer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Ionut\\Currency\\": "src"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.1"
+  }
+}
