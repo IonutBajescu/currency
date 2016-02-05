@@ -13,7 +13,7 @@ So far, it provides an out of the box service provider for Laravel. But besides 
 
 Let's say you want to convert $20.5 to EUR by using the latest rates provided by the European Central Bank, the code accomplishing that will look like this:
 ```php
-// Replace the cache with one that suits your use-case better
+// Replace the cache driver with one that suits your situation better
 $cache = new ArrayCache;
 $exchanger = new Exchanger(
     new EuropeanCentralBank(
@@ -28,9 +28,9 @@ $eurAmount = $exchanger->convert($usdAmount, new Currency('EUR'));
 ## Intermediate Usage
 
 As you can see in the previous example, the currency's power comes from three main parts:
-- The Exchanger, the guy that converts the numbers by applying first grade math.
-- The ExchangeRates whose implementation is the EuropeanCentralBank class in this example, that provides the exchanger with the latest exchange rates.
-- The Downloader, the guy that comes and helps the ExchangeRates implementation with files downloading and caching power.
+1. The Exchanger, the guy that converts the numbers by applying first grade math.
+2. The ExchangeRates whose implementation is the EuropeanCentralBank class in this example, that provides the exchanger with the latest exchange rates.
+3. The Downloader, the guy that comes and helps the ExchangeRates implementation with files downloading and caching power.
 
 By remembering those and keeping in mind that the library fully respects the interfaces found in the `Contracts` namespace, you should be able to master everything there is to know about this library and write meaningful code with it.
 
