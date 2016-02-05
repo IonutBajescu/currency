@@ -27,10 +27,15 @@ $eurAmount = $exchanger->convert($usdAmount, new Currency('EUR'));
 
 ## Intermediate Usage
 
-As you can see in the previous example, the currency's power comes from three main parts:
-1. The Exchanger, the guy that converts the numbers by applying first grade math.
-2. The ExchangeRates whose implementation is the EuropeanCentralBank class in this example, that provides the exchanger with the latest exchange rates.
-3. The Downloader, the guy that comes and helps the ExchangeRates implementation with files downloading and caching power.
+As you can see in the previous example, there are three distinct parts which form the core of the Currency library:
+<dl>
+  <dt>Exchanger</dt>
+  <dd>The guy that converts the numbers by applying first grade math.</dd>
+  <dt>ExchangeRates</dt>
+  <dd><i>Whose implementation is the EuropeanCentralBank guy in the example.</i> <br/>It provides the exchanger with the latest exchange rates.</dd>
+  <dt>Downloader</dt>
+  <dd>The guy that comes and helps the ExchangeRates implementation with downloading and caching power.</dd>
+</dl>
 
 By remembering those and keeping in mind that the library fully respects the interfaces found in the `Contracts` namespace, you should be able to master everything there is to know about this library and write meaningful code with it.
 
