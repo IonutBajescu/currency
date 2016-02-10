@@ -7,7 +7,10 @@
 
 Currency is a currency exchanger written in PHP that aims for ease of use and completely independency of any frameworks or CMSs.
 
-So far, it provides an out of the box service provider for Laravel. But besides that, the library is completely framework agnostic and it'll stay like this for the time being.
+Besides being fully unit-tested and well written, it also is one of the few libraries(if not the only) that uses the European Central Bank rates.
+This doesn't only mean that you get the conversion rates for free, it also means that you do not tie one of the core responsibilities of your application to a fragile third-party service.
+
+So far, it provides an out of the box service provider for Laravel. But besides that, the library is completely framework agnostic and it'll stay like this for the foreseeable future.
 
 ## Starting out
 
@@ -43,7 +46,7 @@ By remembering those and keeping in mind that the library fully respects the int
 Because libraries die more often that one would expect, Currency provides the developer with Contracts for every of the Currency's class, allowing his code to remain SOLID while using the best currency conversion library there is.
 
 ## Tests
-The present library is fully tested, contributors are welcome to check the aforementioned tests in the `tests` folder and run them by calling PHPUnit.
+The present library is fully unit-tested, contributors are welcome to check the aforementioned tests in the `tests` folder and run them by calling PHPUnit.
 
 ## License
 The present package is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
