@@ -17,13 +17,13 @@ class Amount implements \Ionut\Currency\Contracts\Amount
     protected $currency;
 
     /**
-     * @param  float     $value
-     * @param  Currency  $currency
+     * @param  float            $value
+     * @param  string|Currency  $currency
      */
-    public function __construct($value, Currency $currency)
+    public function __construct($value, $currency)
     {
         $this->value = $value;
-        $this->currency = $currency;
+        $this->currency = is_string($currency) ? new \Ionut\Currency\Currency($currency) : $currency;
     }
 
     /**

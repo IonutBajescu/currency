@@ -25,7 +25,7 @@ $exchanger = new Exchanger(
 );
 
 $usdAmount = new Amount(20.5, 'USD');
-$eurAmount = $exchanger->convert($usdAmount, new Currency('EUR'));
+$eurAmount = $exchanger->convert($usdAmount, 'EUR');
 ```
 
 ## Intermediate Usage

@@ -2,22 +2,21 @@
 
 namespace Ionut\Currency;
 
-
-use Ionut\Currency\Contracts\Amount;
-use Ionut\Currency\Contracts\Currency;
-use Ionut\Currency\Contracts\ExchangeRates;
+use Ionut\Currency\Contracts\Amount as AmountContract;
+use Ionut\Currency\Contracts\Currency as CurrencyContract;
+use Ionut\Currency\Contracts\ExchangeRates as ExchangeRatesContract;
 
 class Exchanger implements \Ionut\Currency\Contracts\Exchanger
 {
     /**
-     * @var ExchangeRates
+     * @var ExchangeRatesContract
      */
     protected $rates;
 
     /**
-     * @param ExchangeRates $rates
+     * @param ExchangeRatesContract $rates
      */
-    public function __construct(ExchangeRates $rates)
+    public function __construct(ExchangeRatesContract $rates)
     {
         $this->rates = $rates;
     }
@@ -25,12 +24,14 @@ class Exchanger implements \Ionut\Currency\Contracts\Exchanger
     /**
      * Convert an amount to another currency based on the exchange rates of the exchanger.
      *
-     * @param  Amount    $amount
-     * @param  Currency  $toCurrency
-     * @return Amount
+     * @param  AmountContract           $amount
+     * @param  CurrencyContract|string  $toCurrency
+     * @return AmountContract
      */
-    public function convert(Amount $amount, Currency $toCurrency)
+    public function convert(AmountContract $amount, $toCurrency)
     {
+        $toCurrency = is_string($toCurrency) ? new Currency($toCurrency) : $toCurrency;
+
         $rate = $this->rates->getRate($amount->getCurrency(), $toCurrency);
         $converted = $amount->getValue() / $rate;
 
