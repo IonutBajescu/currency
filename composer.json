@@ -1,5 +1,6 @@
 {
   "name": "ionut/currency",
+  "description": "Framework-agnostic currency conversion based on the European Central Bank rates. Integrates seamlessly with Laravel.",
   "license": "MIT",
   "authors": [
     {
