@@ -5,10 +5,10 @@
 [![Latest Unstable Version](https://poser.pugx.org/ionut/currency/v/unstable.svg)](https://packagist.org/packages/ionut/currency)
 [![License](https://poser.pugx.org/ionut/currency/license.svg)](https://packagist.org/packages/ionut/currency)
 
-Currency is a currency exchanger written in PHP that aims for ease of use and completely independency of any frameworks or CMSs.
+Currency is a currency exchanger written in PHP that aims for ease of use and complete independence of any frameworks or CMSs.
 
-Besides being fully unit-tested and well written, it also is one of the few libraries(if not the only) that uses the European Central Bank rates.
-This doesn't only mean that you get the conversion rates for free, it also means that you do not tie one of the core responsibilities of your application to a fragile third-party service.
+Besides being fully unit-tested and well written, it is also one of the few libraries(if not the only) that uses the European Central Bank rates.
+This does not only mean that you get the conversion rates for free but also that you do not tie one of the core responsibilities of your application to a fragile third-party service.
 
 So far, it provides an out of the box service provider for Laravel. But besides that, the library is completely framework agnostic and it'll stay like this for the foreseeable future.
 
@@ -17,12 +17,7 @@ So far, it provides an out of the box service provider for Laravel. But besides 
 Let's say you want to convert $20.5 to EUR by using the latest rates provided by the European Central Bank, the code accomplishing that will look like this:
 ```php
 // Replace the cache driver with one that suits your situation better
-$cache = new ArrayCache;
-$exchanger = new Exchanger(
-    new EuropeanCentralBank(
-        new Downloader($cache)
-    )
-);
+$exchanger = (new Ionut\Currency\Factory)->create();
 
 $usdAmount = new Amount(20.5, 'USD');
 $eurAmount = $exchanger->convert($usdAmount, 'EUR');
