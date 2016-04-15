@@ -16,7 +16,6 @@ So far, it provides an out of the box service provider for Laravel. But besides 
 
 Let's say you want to convert $20.5 to EUR by using the latest rates provided by the European Central Bank, the code accomplishing that will look like this:
 ```php
-// Replace the cache driver with one that suits your situation better
 $exchanger = (new Ionut\Currency\Factory)->create();
 
 $usdAmount = new Amount(20.5, 'USD');
