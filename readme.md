@@ -32,7 +32,7 @@ As you can see in the previous example, there are three distinct parts which for
   <dt>ExchangeRates</dt>
   <dd><i>Whose implementation is the EuropeanCentralBank guy in the example.</i> <br/>It provides the exchanger with the latest exchange rates.</dd>
   <dt>Downloader</dt>
-  <dd>The guy that comes and helps the ExchangeRates implementation with downloading and caching power.</dd>
+  <dd>The guy that comes and helps ExchangeRates by downloading files and caching them locally. (for example an XML containing the exchange rates)</dd>
 </dl>
 
 By remembering those and keeping in mind that the library fully respects the interfaces found in the `Contracts` namespace, you should be able to master everything there is to know about this library and write meaningful code with it.
