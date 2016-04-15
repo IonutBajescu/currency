@@ -16,13 +16,26 @@ So far, it provides an out of the box service provider for Laravel. But besides 
 
 ## Starting out
 
+Some applications do not need the complexity and verbosity of our OOP endeavours. For those, currency has a clean helper that would love to help you keep your code short.
+
 Let's say you want to convert $20.5 to EUR by using the latest rates provided by the European Central Bank, the code accomplishing that will look like this:
+
+```php
+$eurAmount = currency(20.5, 'USD')->toEUR();
+```
+
+## Gain control of the exchanger's building
+
+In case you don't fancy having helpers in your codebase you'll be happy to know that using the helper function is optional. Let's just rewrite the previous example and get rid of the helper:
+
 ```php
 $exchanger = (new Ionut\Currency\Factory)->create();
 
 $usdAmount = new Amount(20.5, 'USD');
 $eurAmount = $exchanger->convert($usdAmount, 'EUR');
 ```
+
+Of course, there's more code to write by using this approach. But such level of control couldn't be readily accomplished by using the helper function.
 
 ## Intermediate Usage
 

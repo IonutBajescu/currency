@@ -68,4 +68,14 @@ class Amount implements \Ionut\Currency\Contracts\Amount
     {
         return $this->value;
     }
+
+    /**
+     * Alias to ->getValue()
+     * 
+     * @return string
+     */
+    public function plain()
+    {
+        return $this->getValue();
+    }
 }

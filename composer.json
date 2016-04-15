@@ -14,7 +14,10 @@
     "psr-4": {
       "Ionut\\Currency\\": "src",
       "Ionut\\Currency\\Tests\\": "tests"
-    }
+    },
+    "files": [
+      "src/helpers.php"
+    ]
   },
   "require-dev": {
     "phpunit/phpunit": "^5.1",
