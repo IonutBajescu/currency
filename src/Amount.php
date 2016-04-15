@@ -2,28 +2,28 @@
 
 namespace Ionut\Currency;
 
-use Ionut\Currency\Contracts\Currency;
+use Ionut\Currency\Contracts\Currency as CurrencyContract;
 
 class Amount implements \Ionut\Currency\Contracts\Amount
 {
     /**
-     * @var string
+     * @var float
      */
     protected $value;
 
     /**
-     * @var Currency
+     * @var CurrencyContract
      */
     protected $currency;
 
     /**
-     * @param  float            $value
-     * @param  string|Currency  $currency
+     * @param  float                    $value
+     * @param  string|CurrencyContract  $currency
      */
     public function __construct($value, $currency)
     {
-        $this->value = $value;
-        $this->currency = is_string($currency) ? new \Ionut\Currency\Currency($currency) : $currency;
+        $this->value    = $value;
+        $this->currency = is_string($currency) ? new Currency($currency) : $currency;
     }
 
     /**
@@ -54,7 +54,7 @@ class Amount implements \Ionut\Currency\Contracts\Amount
     }
 
     /**
-     * @return Currency
+     * @return CurrencyContract
      */
     public function getCurrency()
     {

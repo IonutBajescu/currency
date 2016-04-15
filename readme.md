@@ -2,9 +2,9 @@
 
 [![Latest Stable Version](https://poser.pugx.org/ionut/currency/v/stable.svg)](https://packagist.org/packages/ionut/currency)
 [![Build Status](https://img.shields.io/travis/IonutBajescu/currency/master.svg?style=flat-square)](https://travis-ci.org/IonutBajescu/currency)
-[![Total Downloads](https://poser.pugx.org/ionut/currency/d/total.svg)](https://packagist.org/packages/ionut/currency)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/IonutBajescu/currency.svg?style=flat-square)](https://scrutinizer-ci.com/g/IonutBajescu/currency/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/IonutBajescu/currency.svg?style=flat-square)](https://scrutinizer-ci.com/g/IonutBajescu/currency)
+[![Total Downloads](https://poser.pugx.org/ionut/currency/d/total.svg)](https://packagist.org/packages/ionut/currency)
 [![License](https://poser.pugx.org/ionut/currency/license.svg)](https://packagist.org/packages/ionut/currency)
 
 Currency is a currency exchanger written in PHP that aims for ease of use and complete independence of any frameworks or CMSs.
